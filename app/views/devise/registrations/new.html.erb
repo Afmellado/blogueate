@@ -9,6 +9,31 @@
   </div>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= text_area_tag :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linkedin %><br />
+    <%= f.text_field :linkedin, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
