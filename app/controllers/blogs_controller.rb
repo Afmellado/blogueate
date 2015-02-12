@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    render :layout => "bloglayout/blogindex"
   end
 
   # GET /blogs/new
@@ -25,6 +26,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
 
     respond_to do |format|
       if @blog.save
