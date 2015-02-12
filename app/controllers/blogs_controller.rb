@@ -9,7 +9,13 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show
+  def show     
+
+      #carga de vars antes del render      
+
+      render layout: "bloglayout/blogindex"
+     
+      
   end
 
   # GET /blogs/new
@@ -26,6 +32,8 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
 
+    #aqui agregamos el id del usuario logueado y lo asociamos al nuevo blog creado
+    @blog.user_id = current_user.id
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
